@@ -18,9 +18,7 @@ new Vue({
 // 引入微应用入口配置
 registerMicroApps(microApps, {
   // 注册一些全局生命周期钩子，如进行日志打印，如果不需要可以不传
-    beforeMount() {
-      console.log(21, "qiankun-beforeMount");
-    },
+    beforeMount() {},
 });
 // 启动qiankun，并开启预加载
 start({ prefetch: true });
