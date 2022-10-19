@@ -1,10 +1,15 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/home">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/app1">app1</router-link>
     </nav>
     <router-view />
+    <div class="app-content">
+      <!-- 微应用所在 -->
+      <div id="root-view"></div>
+    </div>
   </div>
 </template>
 
