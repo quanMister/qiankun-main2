@@ -29,7 +29,7 @@ const sendMes2 = () => {
     actions.setGlobalState({ mes2: mes2.value }); //通过setGlobalState改变全局状态
 };
 
-// 有vuex等状态管理的话可以设置为vuex里的值，并在vuex中用actions.onGlobalStateChange和store.commit改变相应的值
+// 数据要存入vuex的话可以在src\actions\index.js中进行监听并用store.commit改变相应的值 
 actions.onGlobalStateChange((state, prev) => {
     console.log(31, "主应用监听子应用发来的信息", state, prev);
     if (state.app1Msg !== prev.app1Msg) {
