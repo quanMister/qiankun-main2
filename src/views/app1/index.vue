@@ -8,7 +8,7 @@
             <p>本主应用消息2：{{ mes2 }}</p>
             <button @click="sendMes2">点击向子应用发送消息2</button>
         </div>
-        <p>接收到的消息：{{ app1Msg }}</p>
+        <p class="msg">接收到的消息：{{ app1Msg }}</p>
     </div>
 </template>
 
@@ -29,7 +29,7 @@ const sendMes2 = () => {
     actions.setGlobalState({ mes2: mes2.value }); //通过setGlobalState改变全局状态
 };
 
-// 数据要存入vuex的话可以在src\actions\index.js中进行监听并用store.commit改变相应的值 
+// 数据要存入vuex的话可以在src\actions\index.js中进行监听并用store.commit改变相应的值
 actions.onGlobalStateChange((state, prev) => {
     console.log(31, "主应用监听子应用发来的信息", state, prev);
     if (state.app1Msg !== prev.app1Msg) {
@@ -40,3 +40,8 @@ onMounted(() => {
     console.log(10, "主应用app1地址");
 });
 </script>
+<style lang="scss" scoped>
+.msg {
+    color: red;
+}
+</style>
